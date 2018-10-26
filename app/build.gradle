@@ -1,0 +1,33 @@
+apply plugin: rootProject.ext.plugins.application
+apply plugin: rootProject.ext.plugins.butterknife
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.webwalker.coingod"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifCompiler
+
+    implementation project(':core')
+    implementation project(':http')
+    implementation project(':adapter')
+}

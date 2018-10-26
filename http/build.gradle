@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okio:okio:1.14.1'
+
+    implementation project(':core')
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

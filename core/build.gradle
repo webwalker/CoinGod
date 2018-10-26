@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'junit:junit:4.12'
+
+    api 'com.google.code.gson:gson:2.8.2'
+    api 'redis.clients:jedis:2.9.0'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
